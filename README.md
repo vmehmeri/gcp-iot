@@ -56,16 +56,34 @@ All those libraries are already available in Arduino Web Editor. The latest code
 
 
 ### Usage
-First edit config.py and configure your connection details and secret keys. You will need to create an account in Pusher and an application (it's free)
+First edit **config.py** and configure your connection details and secret keys. You will need to create an account in Pusher and an application (it's free)
 
-Start frontend
+**config.py (replace values):**
+```
+from pusher import Pusher
+
+pusher = Pusher(
+    app_id='APP_ID',
+    key = "KEY",
+    secret = "SECRET",
+    cluster = "CLUSTER",
+    ssl=True
+)
+
+## GCP Config
+project_id = "PROJECT_ID"
+topic_name = "projects/PROJECT_ID/topics/TOPIC"
+subscription_name = "SUBSCRIPTION_NAME"
+```
+
+**Start frontend**
 ```
     python frontend/app.py
 ```
 
-On a separate terminal, start backend
+**On a separate terminal, start backend**
 ```
     python device_handler.py
 ```
 
-Both frontend and backend can run in any computer with access to the Google Cloud's URLs. 
+Next open a browser pointing to localhost:5000 and you should see your dashboard.
