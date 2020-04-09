@@ -78,12 +78,12 @@ subscription_name = "SUBSCRIPTION_NAME"
 
 **Start frontend**
 ```
-    python frontend/app.py
+    python app.py
 ```
 
 **On a separate terminal, start backend**
 ```
-    python device_handler.py
+    python device_broker.py
 ```
 
 Next open a browser pointing to localhost:5000 and you should see your dashboard.
